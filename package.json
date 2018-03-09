@@ -8,10 +8,15 @@
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "cron": "^1.3.0",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "nedb": "^1.8.0",
+    "serve-favicon": "~2.4.5",
+    "slack-node": "^0.1.8",
+    "wagaya": "git+https://takuya0220:takuya2727@github.com/takuya0220/wagaya-100yen-menu.git",
+    "wagaya-100yen-menu": "git+https://takuya0220:takuya2727@github.com/takuya0220/wagaya-100yen-menu.git"
   }
 }
