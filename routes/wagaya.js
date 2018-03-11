@@ -1,18 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-
 var Slack = require('slack-node');
 var cronJob = require('cron').CronJob;
 var Wagaya = require('wagaya-100yen-menu');
-
 var wagaya = new Wagaya();
 
+/* GET users listing. */
 router.get('/', function(req, res) {
     console.log(req);
-    doFindWagaya('*', function(data) {
-        res.send(data);
+    doFindWagaya({
+        ym: req.query.ym
+    }, function(data) {
+        res.json(data);
     });
 });
 
@@ -26,6 +26,7 @@ function doInsertWagaya() {
     wagaya.insertWagaya100Yen();
 }
 
+doInsertWagaya();
 function setupCron() {
     var cronTime = "0 0 4 1 * *";
     var job = new cronJob({
