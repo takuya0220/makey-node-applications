@@ -4,7 +4,7 @@ var router = express.Router();
 var Slack = require('slack-node');
 var cronJob = require('cron').CronJob;
 var Wagaya = require('wagaya-100yen-menu');
-var wagaya = new Wagaya();
+var wagaya = new Wagaya('./nedb/wagaya.json');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
